@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-
-"""
-fetches the title of all hot posts for a given subreddit recursively"""
+"""fetches the title of all hot posts for a given subreddit recursively"""
 
 import requests
 
