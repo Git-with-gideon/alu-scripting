@@ -11,24 +11,7 @@ def top_ten(subreddit):
     HEADERS = {"User-Agent": "PostmanRuntime/7.35.0"}
     try:
         RESPONSE = requests.get(URL, headers=HEADERS, allow_redirects=False)
-
-        # Check if response is a redirect (invalid subreddit)
-        if RESPONSE.status_code in [301, 302, 303, 307, 308]:
-            print("OK")
-            return
-
-        # Check if request was successful
-        if RESPONSE.status_code != 200:
-            print("OK")
-            return
-
         HOT_POSTS = RESPONSE.json().get("data").get("children")
         [print(post.get('data').get('title')) for post in HOT_POSTS]
-        print("OK")
     except Exception:
-        print("OK")
-
-
-if __name__ == "__main__":
-    # Example usage - you can change this to any subreddit
-    top_ten("python")
+        print(None)
